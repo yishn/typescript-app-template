@@ -6,8 +6,12 @@
   "scripts": {
     "start": "node .",
     "format": "prettier --write .",
-    "build": "prettier --check . && npm run build-server",
+    "build": "prettier --check . && npm run build-server && npm run build-ui",
     "build-server": "tsc --project ./tsconfig.server.json",
+    "build-ui": "webpack --mode production --config ./webpack.config.js",
+    "watch": "concurrently \"npm run watch-server\" \"npm run watch-ui\"",
+    "watch-server": "tsc --project ./tsconfig.server.json --watch",
+    "watch-ui": "webpack --mode development --config ./webpack.config.js --watch",
     "test": "tap"
   },
   "repository": {
@@ -29,6 +33,7 @@
   "devDependencies": {
     "@types/node": "^14.14.2",
     "@types/tap": "^14.10.1",
+    "concurrently": "^5.3.0",
     "prettier": "^2.1.2",
     "tap": "^14.10.8",
     "ts-loader": "^8.0.7",

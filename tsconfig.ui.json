@@ -4,7 +4,7 @@
     "rootDir": "./src",
     "outDir": "./build",
     "target": "ES2019",
-    "module": "CommonJS"
+    "module": "ESNext"
   },
-  "include": ["./src/server/**/*", "./src/shared/**/*"]
+  "include": ["./src/ui/**/*", "./src/shared/**/*"]
 }
