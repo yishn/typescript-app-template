@@ -12,7 +12,7 @@
     "watch": "concurrently \"npm run watch-server\" \"npm run watch-ui\"",
     "watch-server": "tsc --project ./tsconfig.server.json --watch",
     "watch-ui": "webpack --mode development --config ./webpack.config.js --watch",
-    "test": "tap"
+    "test": "tap --reporter=base"
   },
   "repository": {
     "type": "git",
