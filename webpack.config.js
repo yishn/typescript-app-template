@@ -1,4 +1,5 @@
 const path = require('path')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 const resolve = relativePath => path.resolve(__dirname, relativePath)
 
@@ -12,6 +13,12 @@ module.exports = (env, argv) => ({
 
   devtool:
     argv.mode === 'production' ? 'source-map' : 'eval-cheap-module-source-map',
+
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: resolve('./src/ui/index.html'),
+    }),
+  ],
 
   module: {
     rules: [
