@@ -28,7 +28,7 @@ module.exports = (env, argv) => ({
           loader: 'ts-loader',
           options: {
             transpileOnly: argv.mode !== 'production',
-            configFile: resolve('./tsconfig.ui.json'),
+            configFile: resolve('./src/ui/tsconfig.json'),
           },
         },
       },

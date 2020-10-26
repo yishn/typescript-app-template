@@ -7,10 +7,10 @@
     "start": "node .",
     "format": "prettier --write .",
     "build": "prettier --check . && npm run build-server && npm run build-ui",
-    "build-server": "tsc --project ./tsconfig.server.json",
+    "build-server": "tsc --project ./src/server/tsconfig.json",
     "build-ui": "webpack --mode production --config ./webpack.config.js",
     "watch": "concurrently \"npm run watch-server\" \"npm run watch-ui\"",
-    "watch-server": "tsc --project ./tsconfig.server.json --watch",
+    "watch-server": "tsc --project ./src/server/tsconfig.json --watch",
     "watch-ui": "webpack --mode development --config ./webpack.config.js --watch",
     "test": "tap --reporter=base"
   },
@@ -30,7 +30,11 @@
     "singleQuote": true
   },
   "homepage": "https://github.com/yishn/typescript-app-template#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
   "devDependencies": {
+    "@types/express": "^4.17.8",
     "@types/node": "^14.14.2",
     "@types/tap": "^14.10.1",
     "concurrently": "^5.3.0",
